@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:solid_test_task/pages/solid_task.dart';
+
 /// The main function runs the application.
 void main() {
   runApp(const Main());
 }
+
 /// The `Main` class is the root of the application.
 class Main extends StatelessWidget {
   /// The key for this widget.
@@ -22,6 +24,7 @@ class Main extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.deepPurple,
           ),
+
           /// The home page of the application.
           home: const SolidTask(),
         );

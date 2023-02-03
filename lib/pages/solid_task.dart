@@ -2,7 +2,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-
 /// [SolidTask] is a `StatefulWidget` that displays a random color
 /// background and a "Hi there" text in the center. The text color
 /// changes based on the brightness of the background color. The user
@@ -18,13 +17,16 @@ class SolidTask extends StatefulWidget {
 class _SolidTaskState extends State<SolidTask> {
   /// size for big font in the app
   double fontSizeBig = 10.w;
+
   /// size for regular font in the app
   double fontSizeRegular = 5.w;
+
   /// max possible value for any color
   int maxAmountColor = 255;
 
   /// background color that will be changed
   Color colorBackground = Colors.deepOrangeAccent;
+
   /// text color changed depending on the brightness of color
   Color textColor = Colors.black;
 
@@ -32,7 +34,7 @@ class _SolidTaskState extends State<SolidTask> {
   List<int> makeColor() {
     /// call for random to generate values
     final Random random = Random();
-    final List<int> colors=[
+    final List<int> colors = [
       random.nextInt(maxAmountColor),
       random.nextInt(maxAmountColor),
       random.nextInt(maxAmountColor),
@@ -45,6 +47,7 @@ class _SolidTaskState extends State<SolidTask> {
   void generateRandomBack() {
     setState(() {
       final List<int> colorValue = makeColor();
+
       /// setting random color
       colorBackground = Color.fromRGBO(
         colorValue.first,
@@ -52,6 +55,7 @@ class _SolidTaskState extends State<SolidTask> {
         colorValue.last,
         1,
       );
+
       /// setting color of text depending on brightness
       ThemeData.estimateBrightnessForColor(colorBackground) == Brightness.dark
           ? textColor = Colors.white
@@ -60,11 +64,10 @@ class _SolidTaskState extends State<SolidTask> {
   }
 
   ///function to generate random text color
-  void generateRandomText()
-  {
+  void generateRandomText() {
     setState(() {
       final List<int> colorValue = makeColor();
-      textColor= Color.fromRGBO(
+      textColor = Color.fromRGBO(
         colorValue.first,
         colorValue.elementAt(1),
         colorValue.last,
@@ -72,7 +75,6 @@ class _SolidTaskState extends State<SolidTask> {
       );
     });
   }
-
 
   /// init state launches with app
   @override
