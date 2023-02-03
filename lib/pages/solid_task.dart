@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
+
 /// [SolidTask] is a `StatefulWidget` that displays a random color
 /// background and a "Hi there" text in the center. The text color
 /// changes based on the brightness of the background color. The user
